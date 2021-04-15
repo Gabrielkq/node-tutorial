@@ -1,0 +1,25 @@
+{
+  "name": "node_app",
+  "version": "1.0.0",
+  "description": "node course package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "execute": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gabrielkq/node-tutorial.git"
+  },
+  "author": "gabriel kutik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gabrielkq/node-tutorial/issues"
+  },
+  "homepage": "https://github.com/Gabrielkq/node-tutorial#readme",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "uuid": "^8.3.2",
+    "webpack": "^5.33.2"
+  }
+}

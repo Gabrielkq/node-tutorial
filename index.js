@@ -21,8 +21,15 @@ let hunned = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
 // }
 
 // fizzBuzz(100)
-const shortBuzz = (len) => {
-    for(let i=0;i<len;)console.log((++i%3?'':'fizz')+(i%5?'':'buzz')||i)
-}
+// const shortBuzz = (len) => {
+//    for (let i = 0; i <= len; ){
+//    console.log((++i%3? '' : "fizz")+(i%5? '' : "buzz")+(i%7? '' : "POP!") || i)
+//    }
+// }
 
-shortBuzz(100)
+// shortBuzz(106)
+
+const os = require("os");
+
+console.log(os.type());
+console.log(os.platform());
