@@ -36,17 +36,28 @@
 // console.log(os.platform());
 
 const http = require("http");
+const { report } = require("process");
 
-const hostname = '127.0.0.1';
-const port = 2046;
+http.get('http://api.open-notify.org/astros.json', resp => {
+    let data= '';
+    resp.on('data', chunk =>{
+        data += chunk
+    });
+    resp.on('end', ()=>{
+        console.log(data)
+    })
+})
 
-http.createServer((req,resp) => {
-    resp.writeHead(200,{'Content-Tyoe': 'text/plain'})
-    // resp.statusCode = 200;
-    // resp.setHeader('Content-Tyoe', 'text/plain');
-    resp.write("Welcome to HTTP Server");
-    resp.write(`server running at http://${hostname}:${port}/`)
-    resp.end()
-}).listen(port, hostname, ()=> {
-    console.log(`server running at http://${hostname}:${port}/`)
-});
+// const hostname = '127.0.0.1';
+// const port = 2046;
+
+// http.createServer((req,resp) => {
+//     resp.writeHead(200,{'Content-Tyoe': 'text/plain'})
+//     // resp.statusCode = 200;
+//     // resp.setHeader('Content-Tyoe', 'text/plain');
+//     resp.write("Welcome to HTTP Server");
+//     resp.write(`server running at http://${hostname}:${port}/`)
+//     resp.end()
+// }).listen(port, hostname, ()=> {
+//     console.log(`server running at http://${hostname}:${port}/`)
+// });
