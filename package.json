@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Gabrielkq/node-tutorial#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "cowsay": "^1.4.0",
     "webpack": "^5.33.2"
   },

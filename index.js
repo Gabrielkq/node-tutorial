@@ -11,6 +11,8 @@
 // 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85,
 // 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
 
+//my fizbuzz
+
 // const fizzBuzz = (len) =>{
 // for (let i = 0; i <= len; i++ ){
 // let output = "";
@@ -22,6 +24,8 @@
 // }
 
 // fizzBuzz(100)
+
+//oneline fizzbuz
 // const shortBuzz = (len) => {
 //    for (let i = 0; i <= len; ){
 //    console.log((++i%3? '' : "fizz")+(i%5? '' : "buzz")+(i%7? '' : "POP!") || i)
@@ -35,19 +39,71 @@
 // console.log(os.type());
 // console.log(os.platform());
 
-const http = require("http");
-const { report } = require("process");
+//post request 
+const axios = require('axios')
 
-http.get('http://api.open-notify.org/astros.json', resp => {
-    let data= '';
-    resp.on('data', chunk =>{
-        data += chunk
-    });
-    resp.on('end', ()=>{
-        console.log(data)
-    })
+const data = JSON.stringify({
+    name: "Ghostface Killah",
+    crew: "Wu-tang"
+});
+
+//request
+// const options = {
+//     hostname: 'reqres.in', 
+//     path: '/api/users',
+//     method: 'POST',
+//     header: {
+//     'Content-Type': 'application/json'
+//     }
+// };
+
+const url = 'https://reqres.in/api/users';
+
+axios.post(url, data).then( res => {
+    console.log(`Status Code : ${res.status}`);
+    console.log(`Body: ${JSON.stringify(res.data)}`)
+}).catch(err=>{
+    console.log(err)
 })
 
+// const req = http.request(options, (res) => {
+//     let body = '';
+//     console.log("status code:", res.statusCode);
+
+//     res.on('data', (chunk) => {
+//         body += chunk;
+//     })
+
+//     let parsedData = JSON.parse(body);
+//     res.on('end', ()=> {
+//         console.log("Body: ", parsedData)
+//     })
+// })
+
+// req.write(data);
+// req.end()
+
+//get request
+
+// const http = require("http");
+// const { report } = require("process");
+
+// http.get('http://api.open-notify.org/astros.json', resp => {
+//     let data= '';
+//     resp.on('data', chunk =>{
+//         data += chunk
+//     });
+//     resp.on('end', ()=>{
+//         let json = JSON.parse(data);
+//         json.people.forEach(element => {
+//             console.log(`%c${element.name}`, "color:red;")
+//         })
+//     })
+// })
+
+
+
+//open a server port
 // const hostname = '127.0.0.1';
 // const port = 2046;
 
