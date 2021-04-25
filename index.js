@@ -1,7 +1,5 @@
 // const a = "gabriel";
 // const b = 10;
-// const_ = require('lodash')
-
 // console.log("a is equal to : %s and be is equal to : %d",a,b)
 
 // let hunned = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
@@ -28,60 +26,30 @@
 //oneline fizzbuz
 // const shortBuzz = (len) => {
 //    for (let i = 0; i <= len; ){
-//    console.log((++i%3? '' : "fizz")+(i%5? '' : "buzz")+(i%7? '' : "POP!") || i)
-//    }
-// }
+//    console.log((++i%3? '' : "fizz")+(i%5? '
+const req = http.request(options, (res) => {
+    let body = '';
+    console.log("status code:", res.statusCode);
 
-// shortBuzz(106)
+    res.on('data', (chunk) => {
+        body += chunk;
+    })
 
-// const os = require("os");
+    // let parsedData = JSON.parse(body)
 
-// console.log(os.type());
-// console.log(os.platform());
+//post with axios
+// const axios = require('axios')
 
-//post request 
-const axios = require('axios')
-
-const data = JSON.stringify({
-    name: "Ghostface Killah",
-    crew: "Wu-tang"
-});
-
-//request
-// const options = {
-//     hostname: 'reqres.in', 
-//     path: '/api/users',
-//     method: 'POST',
-//     header: {
-//     'Content-Type': 'application/json'
-//     }
-// };
-
-const url = 'https://reqres.in/api/users';
+// const url = 'https://reqres.in/api/users';
 
 axios.post(url, data).then( res => {
-    console.log(`Status Code : ${res.status}`);
+    console.log("Status Code" : ${res.status}`);
     console.log(`Body: ${JSON.stringify(res.data)}`)
 }).catch(err=>{
     console.log(err)
 })
 
-// const req = http.request(options, (res) => {
-//     let body = '';
-//     console.log("status code:", res.statusCode);
 
-//     res.on('data', (chunk) => {
-//         body += chunk;
-//     })
-
-//     let parsedData = JSON.parse(body);
-//     res.on('end', ()=> {
-//         console.log("Body: ", parsedData)
-//     })
-// })
-
-// req.write(data);
-// req.end()
 
 //get request
 
